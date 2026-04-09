@@ -1,4 +1,3 @@
-Markdown
 # ⚔️ AlgoSiege
 
 **The Real-Time Competitive Code Assessment Platform.**
