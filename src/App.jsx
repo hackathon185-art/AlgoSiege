@@ -35,8 +35,8 @@ import Editor from "@monaco-editor/react";
    │      }                                                      │
    └─────────────────────────────────────────────────────────────┘
 ───────────────────────────────────────────────────────────────────────────── */
-const BACKEND_URL = ""; // ← PASTE YOUR URL HERE e.g. "http://localhost:8000"
-const EVALUATE_ENDPOINT = `${BACKEND_URL}/evaluate`;
+const BACKEND_URL = "https://shine-gluten-reconvene.ngrok-free.dev"; 
+const EVALUATE_ENDPOINT = `${BACKEND_URL}/analyze`;
 
 /* ─── BOILERPLATE CODE (plain strings — shown inside Monaco as default code) ── */
 const p1Boilerplate = `/**
@@ -546,7 +546,7 @@ export default function App() {
 
     /* ── No backend URL set: run in demo mode ── */
     if (!BACKEND_URL) {
-      const dmg = 25;
+      const dmg = 10;
       const actual = Math.min(dmg, p2Health);
       setP2Health((h) => Math.max(0, h - dmg));
       triggerHitFX();
@@ -599,7 +599,7 @@ export default function App() {
         }
       */
 
-      const damage = data.damage ?? 25;
+      const damage = parseInt(data.damage) || 10;
       const complexity = data.complexity ?? "?";
       const passed = data.passed ?? true;
       const message = data.message ?? "";
